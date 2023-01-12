@@ -31,7 +31,7 @@ function timer(){
     if (s == 60){
         s = 0;
         m++;
-    } if(m==3){
+    } if(m==2 && s == 30){
         window.location.reload(true);
     } 
     let formato = (m < 10 ? '0'+ m : m) + ':' + (s < 10 ? '0' + s : s)
