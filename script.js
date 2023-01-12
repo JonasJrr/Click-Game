@@ -15,8 +15,8 @@ let upgrade500 = document.getElementById("mais500");
 
 let count = 0;
 
-var m = 0;
-var s = 0;
+var min = 0;
+var seg = 0;
 
 let tempo = 1000;
 let cron;
@@ -25,89 +25,54 @@ let finish = document.getElementById("congrats");
 
 const CURRENT_NUMBER = document.getElementById('currentNumber');
 
-//Criando Função Cronômetro
+//Criando função cronômetro
 function timer(){
-    s++;
-    if (s == 60){
-        s = 0;
-        m++;
-    } if(m==2 && s == 30){
+    seg++;
+    if (seg == 60){
+        seg = 0;
+        min++;
+    } if(min == 2 && seg == 30){
         window.location.reload(true);
     } 
-    let formato = (m < 10 ? '0'+ m : m) + ':' + (s < 10 ? '0' + s : s)
+    let formato = (min < 10 ? '0'+ min : min) + ':' + (seg < 10 ? '0' + seg : seg)
     document.getElementById("cronometro").innerText = formato
 }
 
-//Criando funções para atualizar os botões
+//Criando função para atualizar os botões
 function att(){
-    if(count >= 20){
-    alert("Parabéns pelos 20 pontos! Você está só começando."),
+    if(count >= 20 && count < 50){
     upgrade.style.cssText = "display:none;",
     upgrade2.style.cssText = "display:inline;";
-    }
-}
-function att2(){
-    if(count >= 50){ 
-     upgrade2.style.cssText = "display:none;",  
-     upgrade3.style.cssText = "display:inline;";
-    }
-}
-function att3(){
-    if(count >= 100){
-     alert("Parabéns pelos 100 pontos! Você está avançando rapidamente."),   
-     upgrade3.style.cssText = "display:none;";
-     upgrade5.style.cssText = "display:inline;";
-    }
-}
-function att5(){
-    if(count >= 250){  
-     upgrade5.style.cssText = "display:none;";   
-     upgrade7.style.cssText = "display:inline;";
-    }
-}
-function att7(){
-    if(count >= 500){
-     alert("Parabéns pelos 500 pontos! Continue em frente."), 
-     upgrade7.style.cssText = "display:none;";   
-     upgrade10.style.cssText = "display:inline;";
-    }
-}
-function att10(){
-    if(count >= 1000){
-     upgrade10.style.cssText = "display:none;";   
-     upgrade20.style.cssText = "display:inline;";
-    }
-}
-function att20(){
-    if(count >= 1750){
-     alert("Parabéns pelos 1750 pontos. Você está somando bastante pontos!"),
-     upgrade20.style.cssText = "display:none;";   
-     upgrade50.style.cssText = "display:inline;";
-    }
-}
-function att50(){
-    if(count >= 4000){
-     upgrade50.style.cssText = "display:none;";   
-     upgrade100.style.cssText = "display:inline;";
-    }
-}
-function att100(){
-    if(count >= 10000){
-     alert("10000 pontos?! Incrível!"),
-     upgrade100.style.cssText = "display:none;";   
-     upgrade200.style.cssText = "display:inline;";
-    }
-}
-function att200(){
-    if(count >= 20000){
-     upgrade200.style.cssText = "display:none;";   
-     upgrade400.style.cssText = "display:inline;";
-    }
-}
-function att400(){
-    if(count >= 40000){
-     upgrade400.style.cssText = "display:none;";   
-     upgrade500.style.cssText = "display:inline;";
+    }else if(count >= 50 && count < 100){                             
+        upgrade2.style.cssText = "display:none;",  
+        upgrade3.style.cssText = "display:inline;";    
+    }else if(count >= 100 && count < 250){
+        upgrade3.style.cssText = "display:none;",  
+        upgrade5.style.cssText = "display:inline;";      
+    }else if(count >= 250 && count < 500){
+        upgrade5.style.cssText = "display:none;",  
+        upgrade7.style.cssText = "display:inline;";    
+    }else if(count >= 500 && count < 1000){
+        upgrade7.style.cssText = "display:none;",  
+        upgrade10.style.cssText = "display:inline;";    
+    }else if(count >= 1000 && count < 1750){
+        upgrade10.style.cssText = "display:none;",  
+        upgrade20.style.cssText = "display:inline;";    
+    }else if(count >= 1750 && count < 4000){
+        upgrade20.style.cssText = "display:none;",  
+        upgrade50.style.cssText = "display:inline;";    
+    }else if(count >= 4000 && count < 10000){
+        upgrade50.style.cssText = "display:none;",  
+        upgrade100.style.cssText = "display:inline;";    
+    }else if(count >= 10000 && count < 20000){
+        upgrade100.style.cssText = "display:none;",  
+        upgrade200.style.cssText = "display:inline;";    
+    }else if(count >= 20000 && count < 40000){
+        upgrade200.style.cssText = "display:none;",  
+        upgrade400.style.cssText = "display:inline;";    
+    }else if(count >= 40000 && count < 100000){
+        upgrade400.style.cssText = "display:none;",  
+        upgrade500.style.cssText = "display:inline;";    
     }
 }
 
@@ -122,7 +87,7 @@ function end(){
     }
 }
 
-//Criando função para começar o cronômetro ao clicar em começar 
+//Criando função para começar o cronômetro ao clicar em "Começar" 
 function clean(){
     start.style.cssText = "display:none;"
     upgrade.style.cssText = "display:inline;"
@@ -138,52 +103,52 @@ function increment() {
 function increment2() {
     count+=2;
     CURRENT_NUMBER.innerHTML = count;
-    att2();
+    att();
 }
 function increment3() {
     count+=3;
     CURRENT_NUMBER.innerHTML = count;
-    att3();
+    att();
 }
 function increment5() {
     count+=5;
     CURRENT_NUMBER.innerHTML = count;
-    att5();
+    att();
 }
 function increment7() {
     count+=7;
     CURRENT_NUMBER.innerHTML = count;
-    att7();
+    att();
 }
 function increment10() {
     count+=10;
     CURRENT_NUMBER.innerHTML = count;
-    att10();
+    att();
 }
 function increment20() {
     count+=20;
     CURRENT_NUMBER.innerHTML = count;
-    att20();
+    att();
 }
 function increment50() {
     count+=50;
     CURRENT_NUMBER.innerHTML = count;
-    att50();
+    att();
 }
 function increment100() {
     count+=100;
     CURRENT_NUMBER.innerHTML = count;
-    att100();
+    att();
 }
 function increment200() {
     count+=200;
     CURRENT_NUMBER.innerHTML = count;
-    att200();
+    att();
 }
 function increment400() {
     count+=400;
     CURRENT_NUMBER.innerHTML = count;
-    att400();
+    att();
 }
 function increment500() {
     count+=500;
@@ -191,7 +156,7 @@ function increment500() {
     end();
 }
 
-//Será retirado 1 ponto a cada 1 segundo
+//Funções para retirar pontos conforme o tempo passar
 function decrementA(){
     if(count > 20){
         count--;
@@ -199,7 +164,6 @@ function decrementA(){
     }}
 setInterval(decrementA, 1000);
 
-//Será retirado 1 ponto a cada 0,5 segundos
 function decrementB(){
     if(count > 100){
         count--;
@@ -207,61 +171,32 @@ function decrementB(){
     }}
 setInterval(decrementB, 500);
 
-//Será retirado 1 ponto a cada 0,1 segundos
 function decrementC(){
     if(count > 500){
         count--;
         CURRENT_NUMBER.innerHTML = count;
-    }}
-setInterval(decrementC, 100);
-
-//Será retirado 2 pontos a cada 0,1 segundos
-function decrementD(){
-    if(count > 1000){
+    }else if(count > 1000){
         count-=2;
         CURRENT_NUMBER.innerHTML = count;
-    }}
-setInterval(decrementD, 100);
-
-//Será retirado 3 pontos a cada 0,1 segundos
-function decrementE(){
-    if(count > 2000){
+    }else if(count > 2000){
         count-=3;
         CURRENT_NUMBER.innerHTML = count;
-    }}
-setInterval(decrementE, 100);
-
-//Será retirado 5 pontos a cada 0,1 segundos
-function decrementF(){
-    if(count > 4000){
+    }else if(count > 4000){
         count-=5;
         CURRENT_NUMBER.innerHTML = count;
-    }}
-setInterval(decrementF, 100);
-
-//Será retirado 10 pontos a cada 0,1 segundos
-function decrementG(){
-    if(count > 10000){
+    }else if(count > 10000){
         count-=10;
         CURRENT_NUMBER.innerHTML = count;
-    }}
-setInterval(decrementG, 100);
-
-//Será retirado 30 pontos a cada 0,1 segundos
-function decrementH(){
-    if(count > 20000){
+    }else if(count > 20000){
         count-=30;
         CURRENT_NUMBER.innerHTML = count;
-    }}
-setInterval(decrementH, 100);
-
-//Será retirado 70 pontos a cada 0,1 segundos
-function decrementH(){
-    if(count > 50000){
+    }else if(count > 50000){
         count-=70;
         CURRENT_NUMBER.innerHTML = count;
-    }}
-setInterval(decrementH, 100);
+    }         
+}
+setInterval(decrementC, 100);
+
 
 
 
