@@ -12,16 +12,42 @@ body {
     background-color: rgb(145, 187, 212);
 }
 
+#start{
+    height: 50px;
+    width: 105px;
+    border-radius: 50%;
+    border: 3px solid rgb(252, 104, 6);
+    background-color: rgb(241, 214, 214);
+    color: rgb(252, 104, 6);
+    font-size: 15pt;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 1px 0px 1px 0px black;
+    transition: color, background-color, border, box-shadow;
+    transition-duration: 500ms;
+}
+
+#start:hover{
+    cursor: pointer;
+    color:rgb(241, 214, 214);
+    background-color: rgb(252, 104, 6);
+    border: 3px solid rgb(241, 214, 214);
+    box-shadow: 2px 1px 3px 1px black;
+}
+
 button {
-    height: 45px;
+    height: 50px;
     width: 65px;
     border-radius: 50%;
     border: 3px solid rgb(252, 104, 6);
     background-color: rgb(241, 214, 214);
     color: rgb(252, 104, 6);
-    font-size: 16pt;
+    font-size: 15pt;
     font-weight: 600;
     text-align: center;
+    box-shadow: 1px 0px 1px 0px black;
+    transition: color, background-color, border, box-shadow;
+    transition-duration: 500ms;
 }
 
 button:hover{
@@ -29,6 +55,7 @@ button:hover{
     color:rgb(241, 214, 214);
     background-color: rgb(252, 104, 6);
     border: 3px solid rgb(241, 214, 214);
+    box-shadow: 2px 1px 3px 1px black;
 }
 
 .container {
@@ -53,9 +80,23 @@ button:hover{
     text-shadow: 1px 0px black;
 }
 
+#cronometro{
+    padding-top: 2%;
+    font-size: 20px;
+}
+
+#congrats{
+    padding-top: 3%;
+    text-shadow: 1px 0px rgb(252, 104, 6);
+}
+
+#dev{
+    text-shadow: 1px 0px black;}
+
+@media(min-width:992px){
 #dev{
     padding-top: 10%;
-    text-shadow: 2px 1px rgb(252, 104, 6);
+    text-shadow: 1px 0px black;}
 }
 
 

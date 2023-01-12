@@ -4,30 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Click Games</title>
+    <title>Click Game</title>
 </head>
 <body>
     <h1 id="tit">Click Game</h1>
-    <p id="subtit">Olá! Seja Bem vindo(a) ao Click Game. O seu objetivo é alcançar a marca de <strong>10000 pontos</strong>.</p>
-    <p id="subtit">Conforme você clicar no botão e aumentar seus pontos, será possível desbloquear melhorias para completar o desafio mais rápido, <strong>divirta-se!</strong></p>
+    <p id="subtit">Olá! Seja Bem vindo(a) ao Click Game. O seu objetivo é ultrapassar a marca de <strong>100000 pontos</strong>.</p>
+    <p id="subtit">Você terá apenas <strong>3 minutos</strong> para atingir o objetivo.</p>
+    <p id="subtit"><strong>*OBS1:</strong> Ao atingir o tempo limite, a página será recarregada e o jogo reiniciado.</p>
+    <p id="subtit">Conforme você clicar no botão e aumentar seus pontos, será possível desbloquear botões melhores para completar o desafio mais rápido.</p>
+    <p id="subtit"><strong>*OBS2:</strong> Não é tão fácil quanto parece, seja rápido(a)! <strong>Boa Sorte.</strong></p>
+    
 
+    <span id="cronometro">00:00</span>
+    
     <div class="container">
         <div id="counter">
             <span id="currentNumber">0</span><span id="pontos">Pontos</span>
-            <button name="adicionar" id="mais1" onclick="increment()">+1</button>
-            <button name="adicionar" id="mais2" onclick="increment2()" style="display:none;">+2</button>
-            <button name="adicionar" id="mais3" onclick="increment3()" style="display:none;">+3</button>
-            <button name="adicionar" id="mais5" onclick="increment5()" style="display:none;">+5</button>
-            <button name="adicionar" id="mais7" onclick="increment7()" style="display:none;">+7</button>
-            <button name="adicionar" id="mais10" onclick="increment10()" style="display:none;">+10</button>
-            <button name="adicionar" id="mais20" onclick="increment20()" style="display:none;">+20</button>
-            <button name="adicionar" id="mais50" onclick="increment50()" style="display:none;">+50</button>
-            <button name="adicionar" id="mais100" onclick="increment100()" style="display:none;">+100</button>
+            <button id="start" onclick="clean()">Começar</button>
+            <button id="mais1" onclick="increment()" style="display: none;">+1</button>
+            <button id="mais2" onclick="increment2()" style="display:none;">+2</button>
+            <button id="mais3" onclick="increment3()" style="display:none;">+3</button>
+            <button id="mais5" onclick="increment5()" style="display:none;">+5</button>
+            <button id="mais7" onclick="increment7()" style="display:none;">+7</button>
+            <button id="mais10" onclick="increment10()" style="display:none;">+10</button>
+            <button id="mais20" onclick="increment20()" style="display:none;">+20</button>
+            <button id="mais50" onclick="increment50()" style="display:none;">+50</button>
+            <button id="mais100" onclick="increment100()" style="display:none;">+100</button>
+            <button id="mais200" onclick="increment200()" style="display:none;">+200</button>
+            <button id="mais400" onclick="increment400()" style="display:none;">+400</button>
+            <button id="mais500" onclick="increment500()" style="display:none;">+500</button>
         </div>
     </div>
 
-    <h3 id="dev">Desenvolvido por Jonas Júnior</h3>
-    
+    <h3 id="congrats" style="display: none;">Parabéns. Você conseguiu completar o desafio!</h3>
+    <h4 id="dev">Desenvolvido por Jonas Júnior</h4>
+
     <script src="script.js"></script>
 </body>
 </html>
