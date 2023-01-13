@@ -158,36 +158,36 @@ function increment500() {
 
 //Funções para retirar pontos conforme o tempo passar
 function decrementA(){
-    if(count > 20){
+    if(count > 20 && count <= 100){
         count--;
         CURRENT_NUMBER.innerHTML = count;
     }}
 setInterval(decrementA, 1000);
 
 function decrementB(){
-    if(count > 100){
+    if(count > 100 && count <= 500){
         count--;
         CURRENT_NUMBER.innerHTML = count;
     }}
 setInterval(decrementB, 500);
 
 function decrementC(){
-    if(count > 500){
+    if(count > 500 && count <= 1000){
         count--;
         CURRENT_NUMBER.innerHTML = count;
-    }else if(count > 1000){
+    }else if(count > 1000 && count <= 2000){
         count-=2;
         CURRENT_NUMBER.innerHTML = count;
-    }else if(count > 2000){
+    }else if(count > 2000 && count <= 4000){
         count-=3;
         CURRENT_NUMBER.innerHTML = count;
-    }else if(count > 4000){
+    }else if(count > 4000 && count <= 10000){
         count-=5;
         CURRENT_NUMBER.innerHTML = count;
-    }else if(count > 10000){
+    }else if(count > 10000 && count <= 20000){
         count-=10;
         CURRENT_NUMBER.innerHTML = count;
-    }else if(count > 20000){
+    }else if(count > 20000 && count <= 50000){
         count-=30;
         CURRENT_NUMBER.innerHTML = count;
     }else if(count > 50000){
