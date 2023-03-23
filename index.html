@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./img/click icon.png">
     <title>Click Game</title>
 </head>
 <body>
     <h1 id="tit">Click Game</h1>
-    <p id="subtit">Olá! Seja Bem vindo(a) ao Click Game. O seu objetivo é ultrapassar a marca de <strong style="text-shadow:1px 1px rgb(252, 104, 6)">100000 pontos</strong>.</p>
-    <p id="subtit">Você terá apenas <strong style="text-shadow:1px 1px rgb(252, 104, 6)">2 minutos e 30 segundos</strong> para atingir o objetivo.</p>
-    <p id="subtit"><strong style="text-shadow:1px 1px rgb(252, 104, 6)">*OBS1:</strong> Ao atingir o tempo limite, a página será recarregada e o jogo reiniciado.</p>
-    <p id="subtit">Conforme você clicar no botão e aumentar seus pontos, será possível desbloquear botões melhores para completar o desafio mais rápido.</p>
-    <p id="subtit"><strong style="text-shadow:1px 1px rgb(252, 104, 6)">*OBS2:</strong> Não é tão fácil quanto parece, seja rápido(a)! <strong style="text-shadow:1px 1px rgb(252, 104, 6)">Boa Sorte.</strong></p>
+    <p id="subtit">Olá! Seja Bem vindo(a) ao Click Game. O seu objetivo é ultrapassar a marca de <strong>100000 pontos</strong>.</p>
+    <p id="subtit">Você terá apenas <strong>2 minutos e 30 segundos</strong> para atingir o objetivo.</p>
+    <p id="subtit"><strong>*Observação 1:</strong> Ao atingir o tempo limite, o jogo será reiniciado.</p>
+    <p id="subtit"><strong>*Observação 2:</strong> Conforme você clicar no botão e aumentar os seus pontos, será possível desbloquear botões com mais pontos para completar o desafio.</p>
+    <p id="subtit"><strong>*Observação 3:</strong> Fique atento(a) ao vilão.</p>
+    <p id="subtit">Não é tão fácil quanto parece, <strong>boa sorte!</strong></p>
     
 
     <span id="cronometro">00:00</span>
@@ -34,6 +36,11 @@
             <button id="mais400" onclick="increment400()" style="display:none;">+400</button>
             <button id="mais500" onclick="increment500()" style="display:none;">+500</button>
         </div>
+    </div>
+
+    <div id="vilao" style="display: none;">
+     <img src="./img/vilao.png">
+     <strong><p>"Vou roubar todos os seus pontos!!!"</p></strong>
     </div>
 
     <h3 id="congrats" style="display: none;">Parabéns. Você conseguiu completar o desafio!</h3>

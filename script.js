@@ -12,6 +12,7 @@ let upgrade100 = document.getElementById("mais100");
 let upgrade200 = document.getElementById("mais200");
 let upgrade400 = document.getElementById("mais400");
 let upgrade500 = document.getElementById("mais500");
+let vilao = document.getElementById("vilao")
 
 let count = 0;
 
@@ -38,6 +39,11 @@ function timer(){
     document.getElementById("cronometro").innerText = formato
 }
 
+function villain(){
+    if(count >= 100)
+    vilao.style.cssText = "display: inline;"
+}
+
 //Criando função para atualizar os botões
 function att(){
     if(count >= 20 && count < 50){
@@ -48,7 +54,7 @@ function att(){
         upgrade3.style.cssText = "display:inline;";    
     }else if(count >= 100 && count < 250){
         upgrade3.style.cssText = "display:none;",  
-        upgrade5.style.cssText = "display:inline;";      
+        upgrade5.style.cssText = "display:inline;";     
     }else if(count >= 250 && count < 500){
         upgrade5.style.cssText = "display:none;",  
         upgrade7.style.cssText = "display:inline;";    
@@ -74,6 +80,7 @@ function att(){
         upgrade400.style.cssText = "display:none;",  
         upgrade500.style.cssText = "display:inline;";    
     }
+    villain()
 }
 
 //Criando função para quando concluir o desafio
@@ -158,20 +165,13 @@ function increment500() {
 
 //Funções para retirar pontos conforme o tempo passar
 function decrementA(){
-    if(count > 20 && count <= 100){
-        count--;
-        CURRENT_NUMBER.innerHTML = count;
-    }}
-setInterval(decrementA, 1000);
-
-function decrementB(){
     if(count > 100 && count <= 500){
         count--;
         CURRENT_NUMBER.innerHTML = count;
     }}
-setInterval(decrementB, 500);
+setInterval(decrementA, 500);
 
-function decrementC(){
+function decrementB(){
     if(count > 500 && count <= 1000){
         count--;
         CURRENT_NUMBER.innerHTML = count;
@@ -195,7 +195,7 @@ function decrementC(){
         CURRENT_NUMBER.innerHTML = count;
     }         
 }
-setInterval(decrementC, 100);
+setInterval(decrementB, 100);
 
 
 
