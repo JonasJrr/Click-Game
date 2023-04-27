@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 
 * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+:root {
+    --cor-principal: orange;
+    --cor-secundaria: white;
 }
 
 body {
@@ -9,102 +14,131 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgb(255 250 117);
+    background-color: black;
+    background-image: url(./img/orange.png);
+}
+
+@media(max-width:760px){
+body {
+    background-image: none;
+    }
 }
 
 #tit{
-    background: linear-gradient(to right, rgb(62 44 128), black);
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
-    text-shadow: 1px 1px rgb(62 44 128);
+    color: var(--cor-principal);
+    text-shadow: 2px 1px 0px black;
 }
 
-#start{
-    height: 50px;
-    width: 105px;
-    border-radius: 50%;
-    border: 3px solid rgb(62 44 128);
-    background-color: rgb(241, 214, 214);
-    color: rgb(62 44 128);
-    font-size: 15pt;
-    font-weight: 600;
+.texto{
+    width: 680px;
+    padding: 0px 20px;
+    border-radius: 5px;
+    color: var(--cor-principal);
+    text-shadow: 0px 0px 10px var(--cor-principal);
+    border: 5px groove var(--cor-principal);
+    background-color: black;
+}
+
+@media(max-width:760px){
+.texto{
+    width: 290px;
+    }
+}
+
+.tempo{
+    margin-top: 30px;
     text-align: center;
-    box-shadow: 1px 0px 1px 0px black;
-    transition: color, background-color, border, box-shadow;
-    transition-duration: 500ms;
-}
-
-#start:hover{
-    cursor: pointer;
-    color:rgb(241, 214, 214);
-    background-color: rgb(62 44 128);
-    border: 3px solid rgb(241, 214, 214);
-    box-shadow: 2px 1px 3px 1px black;
-}
-
-button {
-    height: 50px;
-    width: 65px;
+    background: black;
+    padding: 30px;
     border-radius: 50%;
-    border: 3px solid rgb(62 44 128);
-    background-color: rgb(241, 214, 214);
-    color: rgb(62 44 128);
-    font-size: 15pt;
-    font-weight: 600;
-    text-align: center;
-    box-shadow: 1px 0px 1px 0px black;
-    transition: color, background-color, border, box-shadow;
-    transition-duration: 300ms;
+    border: 5px groove var(--cor-principal);
+    box-shadow: 0px 0px 25px var(--cor-principal);
 }
 
-button:hover{
-    cursor: pointer;
-    color:rgb(241, 214, 214);
-    background-color: rgb(62 44 128);
-    border: 3px solid rgb(241, 214, 214);
-    box-shadow: 2px 1px 3px 1px black;
+#cronometro{
+    color: var(--cor-principal);
+    font-size: 25px;
+}
+
+.cronometro{
+    color: var(--cor-principal);
+    font-size: 25px;
 }
 
 .container {
     display: flex;
-    padding-top: 5%;
+    padding-top: 80px;
 }
 
 #currentNumber {
+    color: var(--cor-principal);
     margin: 0 20px;
     font-size: 30px;
 }
 
 #pontos{
+    color: var(--cor-principal);
     margin-right: 10px;
 }
 
-
-#subtit{
-    text-shadow: 1px 0px black;
-}
-
-#cronometro{
-    padding-top: 2%;
-    font-size: 20px;
-}
-#vilao{
+#start{
+    height: 60px;
+    width: 105px;
+    border-radius: 50%;
+    border: 3px solid var(--cor-principal);
+    background-color: black;
+    color: var(--cor-principal);
+    font-size: 15pt;
+    font-weight: 600;
     text-align: center;
-    margin-top: 40px;
+    box-shadow: 1px 0px 1px 0px black;
+}
+
+@media(max-width:760px){
+#start{
+    height: 60px;
+    width: 110px;
+    }
+}
+
+button {
+    height: 60px;
+    width: 65px;
+    border-radius: 50%;
+    border: 3px solid var(--cor-principal);
+    background-color: black;
+    color: var(--cor-principal);
+    font-size: 15pt;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 1px 0px 1px 0px black;
+}
+
+@media(max-width:760px){
+button {
+    height: 60px;
+    width: 90px;
+    }
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 #congrats{
     padding-top: 3%;
-    text-shadow: 1px 0px rgb(62 44 128);
+    color: var(--cor-principal);
+    text-shadow: 0px 0px 5px black;
 }
 
 #dev{
-    text-shadow: 1px 0px black;}
-
-@media(min-width:992px){
-#dev{
+    color: var(--cor-principal);
+    text-shadow: 1px 0px black;
     padding-top: 10%;
-    text-shadow: 1px 0px black;}
 }
+
+
+
+
 
 

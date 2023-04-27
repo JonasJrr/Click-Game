@@ -39,16 +39,11 @@ function timer(){
     document.getElementById("cronometro").innerText = formato
 }
 
-function villain(){
-    if(count >= 100)
-    vilao.style.cssText = "display: inline;"
-}
-
 //Criando função para atualizar os botões
 function att(){
     if(count >= 20 && count < 50){
-    upgrade.style.cssText = "display:none;",
-    upgrade2.style.cssText = "display:inline;";
+        upgrade.style.cssText = "display:none;",
+        upgrade2.style.cssText = "display:inline;";
     }else if(count >= 50 && count < 100){                             
         upgrade2.style.cssText = "display:none;",  
         upgrade3.style.cssText = "display:inline;";    
@@ -73,20 +68,19 @@ function att(){
     }else if(count >= 10000 && count < 20000){
         upgrade100.style.cssText = "display:none;",  
         upgrade200.style.cssText = "display:inline;";    
-    }else if(count >= 20000 && count < 40000){
+    }else if(count >= 20000 && count < 50000){
         upgrade200.style.cssText = "display:none;",  
         upgrade400.style.cssText = "display:inline;";    
-    }else if(count >= 40000 && count < 100000){
+    }else if(count >= 50000 && count < 100000){
         upgrade400.style.cssText = "display:none;",  
         upgrade500.style.cssText = "display:inline;";    
     }
-    villain()
 }
 
 //Criando função para quando concluir o desafio
 function end(){
     if(count >= 100000){
-     alert("Amém! Demorou, mas chegou. Você finalmente alcançou os tão sonhados 100000 pontos. Espero que tenha curtido o processo, até o próximo desafio!!!"),
+     alert("Finalmente! Demorou, mas chegou. Você conseguiu ultrapassar a marca de 100000 pontos. Espero que tenha curtido o game, até o próximo desafio."),
      clearInterval(cron);
      count = 0; 
      upgrade500.style.cssText = "display:none;";
@@ -184,14 +178,17 @@ function decrementB(){
     }else if(count > 4000 && count <= 10000){
         count-=5;
         CURRENT_NUMBER.innerHTML = count;
-    }else if(count > 10000 && count <= 20000){
+    }else if(count > 10000 && count <= 25000){
         count-=10;
         CURRENT_NUMBER.innerHTML = count;
-    }else if(count > 20000 && count <= 50000){
+    }else if(count > 25000 && count <= 50000){
         count-=30;
         CURRENT_NUMBER.innerHTML = count;
-    }else if(count > 50000){
-        count-=70;
+    }else if(count > 50000 && count <= 80000){
+        count-=50;
+        CURRENT_NUMBER.innerHTML = count;
+    }else if(count > 80000){
+        count-=80;
         CURRENT_NUMBER.innerHTML = count;
     }         
 }
